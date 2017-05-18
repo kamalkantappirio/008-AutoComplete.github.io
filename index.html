@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--Include bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<div class="registration-container">
+    <form novalidate id="registrationForm">
+        <h1 class="text-center">Registration</h1>
+
+        <div class="form-group">
+            <label for="firstName" class="label-text">First Name<label style="color:red;">*</label> </label>
+            <input type="text" id="firstName" required class="form-control" placeholder="First Name" >
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name<label style="color:red;">*</label> </label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPhone">Phone Number<label style="color:red;">*</label> </label>
+            <input type="text" class="form-control" id="inputPhone" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email Address<label style="color:red;">*</label> </label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password<label style="color:red;">*</label> </label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required confirm-password-field="inputConfirmPassword">
+        </div>
+        <div class="form-group">
+            <label for="inputConfirmPassword">Confirm Password<label style="color:red;">*</label> </label>
+            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form><!-- /form -->
+</div> <!-- ./container -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="./validateplugin.js"></script>
+
+<script>
+  $(function () {
+    $('form').validateForm({
+      requiredFieldMessage: 'Error: Please enter required value.',
+      invalidEmailMessage: 'Error: Please enter valid email address',
+      invalidPasswordMessage: 'Error: Password should be greater than 5 characters.',
+      invalidConfirmPasswordMessage: 'Error: Password and confirm password not match.',
+      confirmPasswordField: "inputConfirmPassword"
+    });
+  });
+</script>
+
+
+</body>
+</html>

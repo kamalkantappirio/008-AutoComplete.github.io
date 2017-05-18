@@ -1,0 +1,71 @@
+<html>
+<head>
+    <!--Include bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+
+    <style>
+        .ui-autocomplete {
+            cursor:pointer;
+            overflow-y:scroll;
+        }
+    </style>
+</head>
+<body style="font-size:62.5%;">
+
+<div class="registration-container">
+    <h1 class="text-center">SEARCH STATE</h1>
+    <div class="text-center">
+        <input type="text" id="tbStates" class="form-control" placeholder="Enter Name"/>
+    </div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    BindControls();
+  });
+
+  function BindControls() {
+    var states = ['Alabama',
+      'Alaska',
+      'Arizona',
+      'Arkansas',
+      'California',
+      'Colorado',
+      'Connecticut',
+      'Delaware',
+      'District Of Columbia',
+      'Florida',
+      'Georgia',
+      'Hawaii',
+      'Idaho',
+      'Illinois',
+      'Indiana',
+      'Iowa',
+      'Kansas',
+      'Kentucky',
+      'Louisiana',
+      'Maine',
+      'Maryland',];
+
+    $('#tbStates').autocomplete({
+      source: states,
+      minLength: 0,
+      scroll: true
+    }).focus(function() {
+      $(this).autocomplete("search", "");
+    });
+  }
+
+
+</script>
+
+</body>
